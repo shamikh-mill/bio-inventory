@@ -1,0 +1,12 @@
+/*style.css*/
+
+body { background: #F0F8FF}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Raleway', serif;
+    font-size: 20px;
+}
