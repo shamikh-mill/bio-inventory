@@ -1,11 +1,11 @@
 {% extends 'inventory/base.html' %}
 {% block body %}
-<div>
+
 <h3>Loaner Equipment in Stock</h3>
 
         {% for item in items %}
         {% if item.checked_out == False %}
-       <div>
+       <div class = 'col-sm-4 col-lg-2'>
 
             <a href = "#">{{ item.make_and_model }}</a>
             <ul>
@@ -66,7 +66,6 @@
        </div>
        {% endif %}
        {% endfor %}
-</div>
 
 
 {%  endblock %}
