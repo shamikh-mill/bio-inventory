@@ -32,21 +32,19 @@
 
        </div>
        {% endif %}
-       {% endfor %}
-</div>
 
 
-<div align="left">
-<h3>Checked Out Loaner Equipment</h3>
 
-        {% for item in items %}
-        {% if item.checked_out == True %}
-        <div>
+	<h3>Checked Out Loaner Equipment</h3>
+
+       {% if item.checked_out == False %}
+       <div>
 
             <a href = "#">{{ item.make_and_model }}</a>
             <ul>
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
+
 		</ul>
 		
         <form action = "#" method = 'post' style = "display: inline;">
@@ -67,9 +65,8 @@
 
        </div>
        {% endif %}
-      {% endfor %}
+       {% endfor %}
 </div>
-
 
 
 {%  endblock %}
