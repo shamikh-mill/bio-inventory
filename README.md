@@ -47,6 +47,10 @@ See also, a [ready-made application](https://github.com/heroku/python-getting-st
 
 <!-- Delete Button: form action was "{% url 'inventory:item-delete' item.id %}" -->
 <!-- Edit button: form action was {% url 'inventory:item-update' item.id %} -->
+{% if item.checked_out == False %}
+       {% endif %}
+
+
 ````
 
 ## License: MIT
