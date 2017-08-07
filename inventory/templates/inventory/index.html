@@ -1,13 +1,35 @@
 {% extends 'inventory/base.html' %}
 {% block body %}
 
-<h1>Loaner Equipment</h1>
+<h2>Loaner Equipment</h2>
 
         {% for item in items %}
 {#        listview stores everything in object_list, which we renamed to items.#}
 {#        <div class = 'col-sm-4 col-lg-2'>#}
 
             <a href = "#">{{ item.make_and_model }}</a>
+            <ul>
+		    <li>{{ item.label }}</li>
+		    <li>{{ item.checked_out }}</li>
+		</ul>
+             <!-- Delete Button: form action was "{% url 'music:item-delete' item.id %}" -->
+        <form action = "#" method = 'post' style = "display: inline;">
+        {% csrf_token %}
+        <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
+        <button type = "submit" class = "btn btn-default btn-sm">
+          <span class = "glyphicon glyphicon-trash"></span>
+        </button>
+      </form>
+
+      <!-- Edit button: form action was {% url 'music:item-update' item.id %} -->
+      <form action = "#" method = 'post' style = "display: inline;">
+      {% csrf_token %}
+      <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
+      <button type = "submit" class = "btn btn-default btn-sm">
+        <span class = "glyphicon glyphicon-edit"></span>
+      </button>
+    </form>
+    
 {#        </div>#}
 
 
