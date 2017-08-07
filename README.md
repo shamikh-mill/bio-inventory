@@ -24,7 +24,7 @@ Using this template to create a new Django app is easy::
 
 (If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
 
-You can replace ``helloworld`` with your desired project name.
+Replace ``helloworld`` with your desired project name.
 
 ## Deployment to Heroku
 
@@ -36,6 +36,9 @@ You can replace ``helloworld`` with your desired project name.
     $ git push heroku master
 
     $ heroku run python manage.py migrate
+
+    # Run typical manage.py commands on the Heroku bash: 
+    $ heroku run bash
 
 See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
 

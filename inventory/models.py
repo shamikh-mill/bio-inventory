@@ -7,6 +7,8 @@ class Item(models.Model):
     notes = models.TextField()
     checked_out = models.BooleanField()
 
+    def __str__(self):
+    	return self.make_and_model
 
     # def get_absolute_url(self):
     #     return reverse('inventory:detail', kwargs = {'pk' : self.pk})
@@ -15,3 +17,6 @@ class Item(models.Model):
 class Loaner(models.Model): 
 	item = models.ForeignKey(Item)
 	net_id = models.CharField(max_length=200)
+
+	def __str__(self):
+		return self.net_id
