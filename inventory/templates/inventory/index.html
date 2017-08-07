@@ -5,7 +5,6 @@
 
         {% for item in items %}
         {% if item.checked_out == True %}
-{#        listview stores everything in object_list, which we renamed to items.#}
        <div class = 'col-sm-4 col-lg-2'>
 
             <a href = "#">{{ item.make_and_model }}</a>
@@ -13,6 +12,7 @@
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
 		</ul>
+		{% endif %}
         <form action = "#" method = 'post' style = "display: inline;">
         {% csrf_token %}
         <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
@@ -37,7 +37,6 @@
 
         {% for item in items %}
         {% if item.checked_out == False %}
-{#        listview stores everything in object_list, which we renamed to items.#}
         <div class = 'col-sm-4 col-lg-2'>
 
             <a href = "#">{{ item.make_and_model }}</a>
@@ -45,6 +44,7 @@
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
 		</ul>
+		{% endif %}
         <form action = "#" method = 'post' style = "display: inline;">
         {% csrf_token %}
         <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
