@@ -29,8 +29,6 @@
         <span class = "glyphicon glyphicon-edit"></span>
       </button>
     </form>
-
-       </div>
        {% endif %}
 
 
@@ -38,8 +36,6 @@
 	<h3>Checked Out Loaner Equipment</h3>
 
        {% if item.checked_out == True %}
-       <div>
-
             <a href = "#">{{ item.make_and_model }}</a>
             <ul>
 		    <li>{{ item.label }}</li>
