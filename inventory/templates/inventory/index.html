@@ -1,11 +1,12 @@
 {% extends 'inventory/base.html' %}
 {% block body %}
 
-<h2>Loaner Equipment</h2>
+<h3 style = "align-content: center;">Loaner Equipment in Stock</h3>
 
         {% for item in items %}
+        {% if item.checked_out == True %}
 {#        listview stores everything in object_list, which we renamed to items.#}
-{#        <div class = 'col-sm-4 col-lg-2'>#}
+       <div class = 'col-sm-4 col-lg-2'>
 
             <a href = "#">{{ item.make_and_model }}</a>
             <ul>
@@ -28,9 +29,39 @@
       </button>
     </form>
     
-{#        </div>#}
+       </div>
 
 
+
+<h3 style = "align-content: center;">Checked Out Loaner Equipment</h3>
+
+        {% for item in items %}
+        {% if item.checked_out == False %}
+{#        listview stores everything in object_list, which we renamed to items.#}
+        <div class = 'col-sm-4 col-lg-2'>
+
+            <a href = "#">{{ item.make_and_model }}</a>
+            <ul>
+		    <li>{{ item.label }}</li>
+		    <li>{{ item.checked_out }}</li>
+		</ul>
+        <form action = "#" method = 'post' style = "display: inline;">
+        {% csrf_token %}
+        <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
+        <button type = "submit" class = "btn btn-default btn-sm">
+          <span class = "glyphicon glyphicon-trash"></span>
+        </button>
+      </form>
+
+      <form action = "#" method = 'post' style = "display: inline;">
+      {% csrf_token %}
+      <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
+      <button type = "submit" class = "btn btn-default btn-sm">
+        <span class = "glyphicon glyphicon-edit"></span>
+      </button>
+    </form>
+    
+       </div>
 
         {% endfor %}
 
