@@ -12,7 +12,7 @@
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
 		</ul>
-             <!-- Delete Button: form action was "{% url 'music:item-delete' item.id %}" -->
+             <!-- Delete Button: form action was "{% url 'item:item-delete' item.id %}" -->
         <form action = "#" method = 'post' style = "display: inline;">
         {% csrf_token %}
         <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
@@ -21,7 +21,7 @@
         </button>
       </form>
 
-      <!-- Edit button: form action was {% url 'music:item-update' item.id %} -->
+      <!-- Edit button: form action was {% url 'item:item-update' item.id %} -->
       <form action = "#" method = 'post' style = "display: inline;">
       {% csrf_token %}
       <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
