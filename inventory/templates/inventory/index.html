@@ -1,6 +1,6 @@
 {% extends 'inventory/base.html' %}
 {% block body %}
-
+<div>
 <h3>Loaner Equipment in Stock</h3>
 
         {% for item in items %}
@@ -13,7 +13,7 @@
 		    <li>{{ item.checked_out }}</li>
 
 		</ul>
-		{% endif %}
+		
         <form action = "#" method = 'post' style = "display: inline;">
         {% csrf_token %}
         <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
@@ -31,11 +31,12 @@
     </form>
 
        </div>
+       {% endif %}
        {% endfor %}
+</div>
 
 
-
-
+<div>
 <h3>Checked Out Loaner Equipment</h3>
 
         {% for item in items %}
@@ -47,7 +48,7 @@
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
 		</ul>
-		{% endif %}
+		
         <form action = "#" method = 'post' style = "display: inline;">
         {% csrf_token %}
         <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
@@ -65,8 +66,9 @@
     </form>
 
        </div>
+       {% endif %}
       {% endfor %}
-
+</div>
 
 
 
