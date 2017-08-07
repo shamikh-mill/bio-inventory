@@ -1,10 +1,10 @@
 {% extends 'inventory/base.html' %}
 {% block body %}
 
-<h3 style = "align-content: center;">Loaner Equipment in Stock</h3>
+<h3>Loaner Equipment in Stock</h3>
 
         {% for item in items %}
-        {% if item.checked_out == True %}
+        {% if item.checked_out == False %}
        <div class = 'col-sm-4 col-lg-2'>
 
             <a href = "#">{{ item.make_and_model }}</a>
@@ -36,10 +36,10 @@
 
 
 
-<h3 style = "align-content: center;">Checked Out Loaner Equipment</h3>
+<h3>Checked Out Loaner Equipment</h3>
 
         {% for item in items %}
-        {% if item.checked_out == False %}
+        {% if item.checked_out == True %}
         <div class = 'col-sm-4 col-lg-2'>
 
             <a href = "#">{{ item.make_and_model }}</a>
