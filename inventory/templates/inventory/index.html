@@ -11,6 +11,7 @@
             <ul>
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
+
 		</ul>
 		{% endif %}
         <form action = "#" method = 'post' style = "display: inline;">
@@ -28,8 +29,10 @@
         <span class = "glyphicon glyphicon-edit"></span>
       </button>
     </form>
-    
+
        </div>
+       {% endfor %}
+
 
 
 
@@ -60,10 +63,11 @@
         <span class = "glyphicon glyphicon-edit"></span>
       </button>
     </form>
-    
-       </div>
 
-        {% endfor %}
+       </div>
+      {% endfor %}
+
+
 
 
 {%  endblock %}
