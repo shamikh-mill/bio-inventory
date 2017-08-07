@@ -12,7 +12,6 @@
 		    <li>{{ item.label }}</li>
 		    <li>{{ item.checked_out }}</li>
 		</ul>
-             <!-- Delete Button: form action was "{% url 'inventory:item-delete' item.id %}" -->
         <form action = "#" method = 'post' style = "display: inline;">
         {% csrf_token %}
         <input type = "hidden" name = "item_id" value = "{{item.id}}"/>
@@ -21,7 +20,6 @@
         </button>
       </form>
 
-      <!-- Edit button: form action was {% url 'inventory:item-update' item.id %} -->
       <form action = "#" method = 'post' style = "display: inline;">
       {% csrf_token %}
       <input type = "hidden" name = "item_id" value = "{{item.id}}"/>

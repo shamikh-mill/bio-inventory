@@ -42,10 +42,12 @@ Replace ``helloworld`` with your desired project name.
 
 See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
 
-## Using Python 2.7?
+````
 
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
 
+<!-- Delete Button: form action was "{% url 'inventory:item-delete' item.id %}" -->
+<!-- Edit button: form action was {% url 'inventory:item-update' item.id %} -->
+````
 
 ## License: MIT
 
@@ -54,3 +56,4 @@ Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
 - [Gunicorn](https://warehouse.python.org/project/gunicorn/)
 - [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
 - [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+
