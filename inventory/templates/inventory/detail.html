@@ -9,11 +9,11 @@
   <li>Label: {{ item.label }}</li>
   <li>Notes: {{ item.notes }}</li>
   <li>Checked out? {{ item.checked_out }}</li>
+     {% for loaner in item.loaner_set.all %}
+    <li>User: {{ loaner.net_id }}</li>
+    {% endfor %}
 </ul>
 
-   {% for loaner in item.loaner_set.all %}
-    <li>{{ loaner.net_id }}</li>
-    {% endfor %}
 
  <form action = "{% url 'inventory:loaner-add' %}" method = 'post' style = "display: inline;">
          {% csrf_token %}
