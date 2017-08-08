@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.urlresolvers import reverse
-import services 
 
 class Item(models.Model):
 	make_and_model = models.CharField(max_length=200)
@@ -19,8 +18,7 @@ class Loaner(models.Model):
 	net_id = models.CharField(max_length=200)
 
 	def __str__(self):
-		# return self.net_id
-		return services.display_name(self.net_id)
+		return self.net_id
 
 	def get_absolute_url(self):
 		return reverse('inventory:detail', kwargs = {'pk' : self.item.pk})
