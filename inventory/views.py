@@ -13,11 +13,17 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Item.objects.all()
 
+class DetailView(generic.DetailView):
+    model = Item
+    template_name = 'inventory/detail.html'
+
 class ItemCreate(CreateView): 
 	model = Item 
 	fields = ['make_and_model', 'label', 'notes', 'checked_out']
 
 
-class DetailView(generic.DetailView):
-    model = Item
-    template_name = 'inventory/detail.html'
+class LoanerCreate(CreateView): 
+	model = Loaner 
+	fields = ['item','net_id']
+
+

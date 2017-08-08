@@ -3,14 +3,23 @@
 {% block body %}
 
 
-<h1>{{ item.make_and_model }}</h1>
+<h2>{{ item.make_and_model }}</h2>
 
 <ul>
-  <li>{{ item.label }}</li>
-  <li>{{ item.notes }}</li>
-  <li>{{ item.checked_out }}</li>
+  <li>Label: {{ item.label }}</li>
+  <li>Notes: {{ item.notes }}</li>
+  <li>Checked out? {{ item.checked_out }}</li>
 </ul>
 
 
+
+ <form action = "{% url 'inventory:loaner-add' %}" method = 'post' style = "display: inline;">
+         {% csrf_token %}
+         <p>Add Loaner for this Item<p>
+
+         <button type = "submit" class = "btn btn-default btn-sm">
+           <span class = "glyphicon glyphicon-plus"></span>
+         </button>
+       </form>
 
 {%  endblock %}
