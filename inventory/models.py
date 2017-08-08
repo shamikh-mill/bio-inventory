@@ -19,3 +19,6 @@ class Loaner(models.Model):
 
 	def __str__(self):
 		return self.net_id
+
+    def get_absolute_url(self):
+        return reverse('inventory:detail', kwargs = {'pk' : self.item.pk})

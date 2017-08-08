@@ -11,7 +11,9 @@
   <li>Checked out? {{ item.checked_out }}</li>
 </ul>
 
-
+   {% for loaner in item.loaner_set.all %}
+    <li>{{ loaner.net_id }}</li>
+    {% endfor %}
 
  <form action = "{% url 'inventory:loaner-add' %}" method = 'post' style = "display: inline;">
          {% csrf_token %}
