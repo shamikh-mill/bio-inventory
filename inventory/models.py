@@ -10,6 +10,9 @@ class Item(models.Model):
     def __str__(self):
     	return self.make_and_model
 
+    def get_absolute_url(self):
+        return reverse('inventory:detail', kwargs = {'pk' : self.pk})
+
     # def get_absolute_url(self):
     #     return reverse('inventory:detail', kwargs = {'pk' : self.pk})
 

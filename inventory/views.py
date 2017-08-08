@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Item, Loaner 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 
 # Create your views here.
@@ -10,3 +12,12 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Item.objects.all()
+
+class ItemCreate(CreateView): 
+	model = Item 
+	fields = ['make_and_model', 'label', 'notes', 'checked_out']
+
+
+class DetailView(generic.DetailView):
+    model = Item
+    template_name = 'inventory/detail.html'

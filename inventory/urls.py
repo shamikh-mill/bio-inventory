@@ -5,4 +5,6 @@ app_name = 'inventory'
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name = 'index'),
+    url(r'item/add/$', views.ItemCreate.as_view(), name = "item-add"),
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name = 'detail'),
 ]
