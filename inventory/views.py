@@ -26,7 +26,6 @@ class ItemCreate(CreateView):
 class ItemUpdate(UpdateView):
     model = Item
     fields = ['make_and_model', 'label', 'notes', 'checked_out']
-    template_name_suffix = '_update_form'
 
 
 class ItemDelete(DeleteView):
