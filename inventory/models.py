@@ -18,10 +18,16 @@ class Item(models.Model):
 class Loaner(models.Model): 
 	item = models.ForeignKey(Item)
 	net_id = models.CharField(max_length=200)
-	name = services.display_name(net_id.lower())
+
+	def get_matchname(self):
+    """Returns the match name for a tag"""
+    	return re.sub("\W+" , "", net_id.lower())
 
 	def __str__(self):
 		return self.net_id
+
+	name = services.display_name(get_matchname())
+
 
 	def get_absolute_url(self):
 		return reverse('inventory:detail', kwargs = {'pk' : self.item.pk})
