@@ -1,0 +1,16 @@
+{% extends 'inventory/base.html' %}
+{% block title %} Loaner Details {% endblock %}
+{% block body %}
+
+
+          {% for r in result %}
+            <tr>
+              <td>
+                {{r}}
+              </td>
+            </tr>
+          {% endfor %}
+
+
+
+{%  endblock %}

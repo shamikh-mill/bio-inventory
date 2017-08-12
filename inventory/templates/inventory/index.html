@@ -43,7 +43,9 @@
             <a href =  "{% url 'inventory:detail' item.id %}">{{ item.make_and_model }}</a>
             <ul>
         <li>{{ item.label }}</li>
-        <li>Checked Out:  {{ item.checked_out }}</li>
+             {% for loaner in item.loaner_set.all %}
+          <li>Current User: {{ loaner.net_id }}</li>
+            {% endfor %}
 
     </ul>
     

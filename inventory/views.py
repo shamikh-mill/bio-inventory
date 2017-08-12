@@ -3,9 +3,7 @@ from django.views import generic
 from .models import Item, Loaner 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
-
-
-
+from .python import services 
 
 # Create your views here.
 class IndexView(generic.ListView):
@@ -37,3 +35,6 @@ class LoanerCreate(CreateView):
 	fields = ['item','net_id']
 
 
+def loaner_detail(request, netid): 
+    name = services.display_name(netid)
+    return render(request, 'inventory/user_detail.html', {'result': name})
