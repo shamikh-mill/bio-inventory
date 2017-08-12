@@ -20,8 +20,7 @@ class Loaner(models.Model):
 	net_id = models.CharField(max_length=200)
 
 	def get_matchname(self):
-    """Returns the match name for a tag"""
-    	return re.sub("\W+" , "", net_id.lower())
+		return re.sub("\W+" , "", net_id.lower())
 
 	def __str__(self):
 		return self.net_id
