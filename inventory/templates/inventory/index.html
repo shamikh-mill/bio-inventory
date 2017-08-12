@@ -4,8 +4,9 @@
 
         {% for item in items %}
       {% if item.checked_out == False %}
-
-       <div class = 'col-sm-4 col-lg-2'>
+{#        <div class = 'col-sm-4 col-lg-2'>
+ #}
+       <div>
             <a href =  "{% url 'inventory:detail' item.id %}">{{ item.make_and_model }}</a>
             <ul>
 		    <li>{{ item.label }}</li>
@@ -39,7 +40,7 @@
         {% for item in items %}
       {% if item.checked_out == True %}
 
-       <div class = 'col-sm-4 col-lg-2'>
+       <div>
             <a href =  "{% url 'inventory:detail' item.id %}">{{ item.make_and_model }}</a>
             <ul>
         <li>{{ item.label }}</li>
