@@ -25,7 +25,7 @@ class Loaner(models.Model):
 	def __str__(self):
 		return self.net_id
 
-	name = services.display_name(get_matchname())
+	name = services.display_name(get_matchname(self))
 
 
 	def get_absolute_url(self):
