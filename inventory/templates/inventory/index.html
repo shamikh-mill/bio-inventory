@@ -33,6 +33,8 @@
        {% endif %}
        {% endfor %}
 
+
+<div style="display: block">
        <h1>Checked out Equipment</h1>
         {% for item in items %}
       {% if item.checked_out == True %}
@@ -64,5 +66,5 @@
        </div>
        {% endif %}
        {% endfor %}
-
+</div>
 {%  endblock %}
