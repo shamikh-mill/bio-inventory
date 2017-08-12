@@ -1,5 +1,6 @@
 {% extends 'inventory/base.html' %}
 {% block body %}
+         <h1>In Stock Equipment</h1>
 
         {% for item in items %}
       {% if item.checked_out == False %}
@@ -32,7 +33,7 @@
        {% endif %}
        {% endfor %}
 
-
+       <h1>Checked out Equipment</h1>
         {% for item in items %}
       {% if item.checked_out == True %}
 
