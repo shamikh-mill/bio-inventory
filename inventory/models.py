@@ -18,7 +18,7 @@ class Item(models.Model):
 class Loaner(models.Model): 
 	item = models.ForeignKey(Item)
 	net_id = models.CharField(max_length=200)
-	name = services.display_name(self.net_id.lower())
+	name = services.display_name(net_id.lower())
 
 	def __str__(self):
 		return self.net_id
