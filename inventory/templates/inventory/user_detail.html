@@ -3,10 +3,11 @@
 {% block body %}
 
 <ul>
-    {% for r in result %}
 
-            <li>{{r}}</li>
+            <li>Name: {{ result.0 }}</li>
+            <li>Email: <a href = 'mailto:' + str({{result.1}})></a>{{result.1}}</li>
+            <li>Primary Affiliation: {{result.2}}</li>
 
-{% endfor %}
+
 </ul>
 {%  endblock %}
