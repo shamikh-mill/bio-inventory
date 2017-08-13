@@ -26,6 +26,21 @@
         </div>
     <!--Items-->
     <div class="collapse navbar-collapse" id = "topNavBar">
+
+            <ul class="nav navbar-nav">
+            <li class = "">
+                <a href = {% url 'inventory:in-stock' %}>
+                    <span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;In Stock
+                </a>
+            </li>
+            <li class = "">
+                <a href = {% url 'inventory:checked-out' %}>
+                    <span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Checked Out
+                </a>
+            </li>
+        </ul>
+
+
         <ul class = "nav navbar-nav navbar-right">
              <li class = "">
                 <a href = {% url 'inventory:item-add' %}>

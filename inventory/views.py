@@ -13,6 +13,22 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Item.objects.all()
 
+
+class InStock(generic.ListView):
+    template_name = 'inventory/in_stock.html'
+    context_object_name = 'items' 
+
+    def get_queryset(self):
+        return Item.objects.filter(checked_out = False)
+
+
+class OutofStock(generic.ListView):
+    template_name = 'inventory/checked_out.html'
+    context_object_name = 'items' 
+
+    def get_queryset(self):
+        return Item.objects.filter(checked_out = True)
+
 class DetailView(generic.DetailView):
     model = Item
     template_name = 'inventory/detail.html'
