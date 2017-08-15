@@ -4,7 +4,7 @@
 
         {% for item in items %}
 
-       <div>
+       <div class = 'col-sm-4 col-lg-2'>
             <a href =  "{% url 'inventory:detail' item.id %}">{{ item.make_and_model }}</a>
             <ul>
 		    <li>{{ item.label }}</li>
