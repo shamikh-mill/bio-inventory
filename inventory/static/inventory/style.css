@@ -1,6 +1,9 @@
 /*style.css*/
 
-body { background: #ECECEA}
+body { background: #ECECEA;
+		font-family: 'Raleway', serif;
+		padding-left: 15px;
+}
 
 .navbar {
     border-radius: 0;
@@ -11,8 +14,3 @@ body { background: #ECECEA}
     font-size: 20px;
 }
 
-
-.body { 
-
-font-family: 'Raleway', serif;
- }
