@@ -17,7 +17,7 @@ body { background: #ECECEA;
 
 /* unvisited link */
 a {
-    font-weight: bold;
+    
 }
 
 
@@ -30,4 +30,9 @@ a:hover {
 /*. is used for class 
 */.name { 
 font-size: 20px;
+font-weight: bold;
+ }
+
+.netid { 
+font-weight: bold;
  }

@@ -10,7 +10,7 @@
 		    <li>{{ item.label }}</li>
 		    <li>Checked Out:  {{ item.checked_out }}</li>
              {% for loaner in item.loaner_set.all %}
-    <li>Current User:<a href = "{% url 'inventory:laoner-detail' loaner.net_id %}"> {{ loaner.net_id }}</a></li>
+    <li>Current User:<a href = "{% url 'inventory:laoner-detail' loaner.net_id %}" class = 'netid'> {{ loaner.net_id }}</a></li>
     {% endfor %}
 
 		</ul>
