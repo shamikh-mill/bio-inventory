@@ -4,6 +4,12 @@ from .models import Item, Loaner
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from .python import services 
+from .serializers import ItemSerializer
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import Response 
+from rest_framework import status 
+from .serializers import ItemSerializer
 
 # Create your views here.
 class IndexView(generic.ListView):
@@ -55,3 +61,14 @@ class LoanerCreate(CreateView):
 def loaner_detail(request, netid): 
     name = services.display_name(netid)
     return render(request, 'inventory/user_detail.html', {'result': name})
+
+
+class ItemList(APIView):
+    def get(self, request):
+        items = Item.objects.all()
+        serializer = ItemSerializer(items, many = True)
+        return Response(serializer.data) 
+
+
+    def post():  
+        pass
