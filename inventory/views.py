@@ -20,7 +20,7 @@ class IndexView(generic.ListView):
         return Item.objects.all()
 
 
-class InStock(generic.ListView):
+class InStockView(generic.ListView):
     template_name = 'inventory/in_stock.html'
     context_object_name = 'items' 
 
@@ -28,7 +28,7 @@ class InStock(generic.ListView):
         return Item.objects.filter(checked_out = False)
 
 
-class OutofStock(generic.ListView):
+class CheckedOutView(generic.ListView):
     template_name = 'inventory/checked_out.html'
     context_object_name = 'items' 
 
