@@ -63,9 +63,19 @@ def loaner_detail(request, netid):
     return render(request, 'inventory/user_detail.html', {'result': name})
 
 
-class ItemList(APIView):
+class InStock(APIView):
     def get(self, request):
-        items = Item.objects.all()
+        items = Item.objects.filter(checked_out = False)
+        serializer = ItemSerializer(items, many = True)
+        return Response(serializer.data) 
+
+
+    def post():  
+        pass
+
+class CheckedOut(APIView):
+    def get(self, request):
+        items = Item.objects.filter(checked_out = True)
         serializer = ItemSerializer(items, many = True)
         return Response(serializer.data) 
 

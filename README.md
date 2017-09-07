@@ -17,7 +17,7 @@ $ heroku run python manage.py runserver
 ````
 {% if item.checked_out == False %}
        {% endif %}
-
+{% url 'inventory:item-delete' item.id %}
 
 ````
 

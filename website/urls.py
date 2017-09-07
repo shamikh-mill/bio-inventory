@@ -21,8 +21,8 @@ from inventory import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('inventory.urls')),
-    url(r'^itemlist/', views.ItemList.as_view()),
-
+    url(r'^instock/', views.InStock.as_view()),
+    url(r'^checkedout/', views.CheckedOut.as_view()),
 ]
 
 
