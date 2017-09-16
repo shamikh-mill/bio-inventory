@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Item, Loaner 
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, TemplateView
 from django.core.urlresolvers import reverse_lazy
 from .python import services 
 from .serializers import ItemSerializer
@@ -63,8 +63,13 @@ def loaner_detail(request, netid):
     return render(request, 'inventory/user_detail.html', {'result': name})
 
 
-def docs(request): 
-    return render(request, 'inventory/docs.html', {})
+# def docs(self, request): 
+#     return render(request, 'inventory/docs.html')
+
+
+class DocsView(generic.TemplateView):
+    template_name = 'inventory/docs.html'
+
 
 class InStock(APIView):
     def get(self, request):

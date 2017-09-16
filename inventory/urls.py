@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'item/(?P<pk>[0-9]+)/delete/$', views.ItemDelete.as_view(), name = 'item-delete'),
     url(r'item/(?P<pk>[0-9]+)/$', views.ItemUpdate.as_view(), name = 'item-update'),
     url(r'^user/(?P<netid>[\w.@+-]+)/$', views.loaner_detail, name='laoner-detail'),
-    url(r'docs/$', views.docs, name = 'docs'),
+    url(r'docs/$', views.DocsView.as_view(), name = 'docs'),
 
 ]
