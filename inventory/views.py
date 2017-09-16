@@ -64,7 +64,7 @@ def loaner_detail(request, netid):
 
 
 def docs(request): 
-    return render(request, 'inventory/docs.html')
+    return render(request, 'inventory/docs.html', {})
 
 class InStock(APIView):
     def get(self, request):
