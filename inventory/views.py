@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Item, Loaner 
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, TemplateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.base import TemplateView
 from django.core.urlresolvers import reverse_lazy
 from .python import services 
 from .serializers import ItemSerializer
