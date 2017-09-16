@@ -1,13 +1,17 @@
 # Biology IT Inventory Dashboard
 
-A user-friendly dashboard style application to keep track of loaner equipment inventory for the Biology IT helpdesk of Duke University.  
+Biology IT Inventory is a web platform built for the Biology IT helpdesk that allows helpdesk members to keep track of in stock and checked out laptops, chargers, cameras, and adapters and their current users. It's a user-friendly dashboard style application that supports API usage for querying in stock and out of stock items, and it's built using Django and the Django REST framework. 
 
 ## Features
 
-- Postgresql database backend with core CRUD features 
+- Core CRUD features 
+- PostgreSQL database backend 
+- REST API to get current stock and current checked out items and their details and current users 
 
 ## Installation 
-1. Clone repo
+1. Clone this repository
+
+2. Run the following:
 
 ````
 $ pip install -r requirements.txt
@@ -15,11 +19,5 @@ $ python manage.py runserver
 # OR 
 $ heroku run python manage.py runserver
 ````
-{% if item.checked_out == False %}
-       {% endif %}
-{% url 'inventory:item-delete' item.id %}
 
-````
-
-## License: MIT
 

@@ -63,6 +63,9 @@ def loaner_detail(request, netid):
     return render(request, 'inventory/user_detail.html', {'result': name})
 
 
+def docs(request): 
+    return render('inventory/docs.html')
+
 class InStock(APIView):
     def get(self, request):
         items = Item.objects.filter(checked_out = False)

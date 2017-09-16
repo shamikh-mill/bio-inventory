@@ -30,12 +30,17 @@
             <ul class="nav navbar-nav">
             <li class = "">
                 <a href = {% url 'inventory:in-stock' %}>
-                    <span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;In Stock
+                    <span class = "glyphicon glyphicon-list-alt" aria-hidden = "true"></span>&nbsp;In Stock
                 </a>
             </li>
             <li class = "">
                 <a href = {% url 'inventory:checked-out' %}>
                     <span class = "glyphicon glyphicon-new-window" aria-hidden = "true"></span>&nbsp;Checked Out
+                </a>
+            </li>
+            <li class = "">
+                <a href = {% url 'docs' %}>
+                    <span class = "glyphicon glyphicon-book" aria-hidden = "true"></span>&nbsp;Documentation
                 </a>
             </li>
         </ul>
