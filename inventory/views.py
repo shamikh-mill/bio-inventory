@@ -68,7 +68,7 @@ def loaner_detail(request, netid):
 #     return render(request, 'inventory/docs.html')
 
 
-class DocsView(generic.TemplateView):
+class DocsView(TemplateView):
     template_name = 'inventory/docs.html'
 
 
