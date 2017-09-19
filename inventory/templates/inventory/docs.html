@@ -15,6 +15,7 @@
 
 The primary functions for the application are intuitive- you can add a new item by knowing its details, specifically its label number (important to label all loaner equipment!), its make and model, any particular notes you may have for an item, and whether or not it's checked out. You can then add a user by just their netID, and assigning them to the item that they are currently checking out. 
 
+<h2>API Usage</h2>
 
 Here's some information on the simple REST API functionality this application can also provide, which is in essence responding to queries on in-stock items and checked out items. 
 
@@ -24,7 +25,12 @@ Here's some information on the simple REST API functionality this application ca
  		<li>The request URL for all out of stock/checked out items is accordingly: <a href = 'http://bioinventory.herokuapp.com/checked-out/'>http://bioinventory.herokuapp.com/checked-out/</a></li>
  	</ul>
 
-To get this information in json format, simply add '?format=json' to the end of the above request URLs. 
+To get this information in json format, simply add '?format=json' to the end of the above request URLs: 
+
+ 	<ul>
+ 		<li><a href = 'http://bioinventory.herokuapp.com/in-stock/?format=json'>http://bioinventory.herokuapp.com/in-stock/?format=json</a></li>
+ 		<li><a href = 'http://bioinventory.herokuapp.com/checked-out/?format=json'>http://bioinventory.herokuapp.com/checked-out/?format=json</a></li>
+ 	</ul>
 
 </p>
 
