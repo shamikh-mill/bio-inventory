@@ -20,6 +20,12 @@ $ python manage.py runserver
 $ heroku run python manage.py runserver
 ````
 
+Make database/model updates with 
+````
+heroku run bash
+python manage.py makemigrations
+python manage.py migrate 
+````
 
 ## Resources for reference 
 1. https://medium.freecodecamp.org/how-to-understand-django-models-the-simple-way-20c39d234870
