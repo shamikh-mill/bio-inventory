@@ -5,8 +5,8 @@ from .python import services
 
 class Item(models.Model):
 	make_and_model = models.CharField(max_length=200)
-	label = models.CharField(max_length=200)
-	notes = models.TextField()
+	label = models.CharField(null=True, max_length=200)
+	notes = models.TextField(null=True)
 	checked_out = models.BooleanField()
 
 	def __str__(self):

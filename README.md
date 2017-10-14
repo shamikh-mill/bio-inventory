@@ -21,3 +21,6 @@ $ heroku run python manage.py runserver
 ````
 
 
+## Resources for reference 
+1. https://medium.freecodecamp.org/how-to-understand-django-models-the-simple-way-20c39d234870
+
